@@ -6,4 +6,4 @@
 
 
 
-![image](C:\Users\18728\Desktop\problem\images\001.png)
+![image](https://github.com/yyqflfl/problem-one/blob/master/images/001.png)
