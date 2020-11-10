@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .own {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .red {
+            background: red;
+        }
+        
+        .blue {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="control">
+        <div v-bind:class='arrClasses'>数组简化</div>
+        <button v-on:click='jhChange'>数组简化的切换</button>
+    </div>
+    <script src="../JS/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '.control',
+            data: {
+                arrClasses: ['red', 'own'],
+            },
+            methods: {
+                jhChange: function() {
+                    var redIndex = this.arrClasses.indexOf('red');
+                    var blueIndex = this.arrClasses.indexOf('blue');
+                    if (redIndex !== -1) {
+                        console.log(redIndex);
+                        this.arrClasses.splice(redIndex, 1, 'blue');
+                        // this.arrClasses.fill('blue', redIndex, redIndex + 1);
+                        console.log(this.arrClasses);
+                    } else {
+                        console.log(blueIndex);
+                        this.arrClasses.splice(blueIndex, 1, 'red');
+                        // this.arrClasses.fill('red', blueIndex, blueIndex + 1);
+                        console.log(this.arrClasses);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
